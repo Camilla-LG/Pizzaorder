@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzabestilling</title>
+</head>
+<body>
+    <p>Ferdighet 9f - Valgsetninger - Sammenligne flere ting på en gang
+        (og og eller sammen)
+    </p>
+    
+    <h3>Pizzabestilling</h3>
+
+    <div id="info"> Gjør et valg på hver linje </div>
+
+    Bunn:
+    <input id="tykkBunn" type="radio" name="bunn" onchange="info()"/> Tykk
+    <input id="tynnBunn" type="radio" name="bunn" onchange="info()"/> Tynn <br/>
+
+    Fyll:
+    <input id="fyllTaco" type="radio" name="fyll"   onchange="info()"/> Taco
+    <input id="fyllKylling" type="radio" name="fyll" onchange="info()"/> Kylling
+    <input id="fyllPepperoni" type="radio" name="fyll" onchange="info()"/> Pepperoni
+    <input id="fyllSkinke" type="radio" name="fyll" onchange="info()"/> Skinke <br/>
+
+    Størrelse:
+    <input id="liten" type="radio" name="str" onchange="info()"/> Liten 
+    <input id="medium" type="radio" name="str" onchange="info()"/> Medium
+    <input id="stor" type="radio"   name="str" onchange="info()"/> Stor <br/>
+
+    Drikke:
+    <input id="cola" type="radio" name="drikke" onchange="info()"/> Cola 1,5L
+    <input id="sprite" type="radio" name="drikke" onchange="info()"/> Sprite 1,5L
+    <input id="fanta" type="radio" name="drikke" onchange="info()"/> Fanta 1,5L <br/>
+</body>
+</html>
