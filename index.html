@@ -34,26 +34,26 @@
         (og og eller sammen)</i>
     </p>
     
-    <h3>Pizzabestilling</h3>
+    <h3> <u> Pizzabestilling! </u> </h3>
 
     <div class="intro"> ${introTxt} </div>
 
-    <br>Bunn:
+    <br><u>Bunn:</u>
     <input  type="radio" name="bunn" onchange="selectBunn('Tykk')" ${selectedBunn == "tykk" ? "checked" : ""}/> Tykk
     <input  type="radio" name="bunn" onchange="selectBunn('Tynn')" ${selectedBunn == "tynn" ? "checked" : ""}/> Tynn <br/>
 
-    Fyll:
+    <u>Fyll:</u>
     <input  type="radio" name="fyll" onchange="selectFyll('Taco')" ${selectedFyll == "taco" ? "checked" : ""}/> Taco
     <input  type="radio" name="fyll" onchange="selectFyll('Kylling')" ${selectedFyll == "kylling" ? "checked" : ""}/> Kylling
     <input  type="radio" name="fyll" onchange="selectFyll('Pepperoni')" ${selectedFyll == "pepperoni" ? "checked" : ""}/> Pepperoni
     <input  type="radio" name="fyll" onchange="selectFyll('Skinke')" ${selectedFyll == "skinke" ? "checked" : ""}/> Skinke <br/>
 
-    Størrelse:
+    <u>Størrelse:</u>
     <input  type="radio" name="str" onchange="selectStr('Liten')" ${selectedStr == "liten" ? "checked" : ""}/> Liten 
     <input  type="radio" name="str" onchange="selectStr('Medium')" ${selectedStr == "medium" ? "checked" : ""}/> Medium 
     <input  type="radio"   name="str" onchange="selectStr('Stor')" ${selectedStr == "stor" ? "checked" : ""}/> Stor <br/>
     <br>
-    <br>Du har valgt:<br/>
+    <br><u>Du har valgt:</u><br/>
 
     <br><i>Bunn:</i> <b>${selectedBunn}</b><br/>
     <i>Fyll:</i> <b>${selectedFyll}</b><br/>
@@ -73,9 +73,9 @@
         if (selectedBunn && selectedFyll && selectedStr) {
             introTxt = "";
             infoTxt = /*HTML*/ `
-            <b>Du har valgt digg bunn med digg fyll og digg størrelse - vil du ha drikke?</b><br/>
-            <br>Drikke:
-            <input  type="radio" name="drikke" onchange="selectDrikke('Pepsi Max')" ${selectedDrikke == "pepsi" ? "checked" : ""}/> Pepsi Max
+            <b>Du har valgt digg bunn, digg fyll, digg størrelse - vil du ha digg drikke også?</b><br/>
+            <br><u>Drikke:</u>
+            <input  type="radio" name="drikke" onchange="selectDrikke('Pepsi Max'), checked" ${selectedDrikke == "pepsi" ? "checked" : ""}/> Pepsi Max
             <input  type="radio" name="drikke" onchange="selectDrikke('Sprite')" ${selectedDrikke == "sprite" ? "checked" : ""}/> Sprite
             <input  type="radio" name="drikke" onchange="selectDrikke('Solo')" ${selectedDrikke == "solo" ? "checked" : ""}/> Solo
             <input  type="radio" name="drikke" onchange="selectNoDrikke('Nei Takk!')" ${selectedNoDrikke == "nei" ? "checked" : ""}/> Nei Takk <br/>
@@ -85,21 +85,21 @@
                 buttonDisabledOrNot = "";
             }
             if(selectedNoDrikke){
-                outroTxt = "Ikke tørst? Helt greit! Da gjenstår det bare å bestille pizza!"
+                outroTxt = "Ikke tørst? Helt greit! Da gjenstår det bare å bestille pizzaen!"
                 buttonDisabledOrNot = "";
             }
         } else {
             introTxt = "Gjør et valg på hver linje:";
-            infoTxt = "Du mangler noen digge valg!";
-            if (!selectedBunn){delTxt += "Du må velge bunn!<br/>"}
-            if (!selectedFyll){delTxt += "Du må velge fyll!<br/>"}
-            if (!selectedStr){delTxt += "Du må velge størrelse!<br/>"}
+            infoTxt = "<u>Du mangler noen digge valg!</u><br>";
+            if (!selectedBunn){infoTxt += delTxt = "<li>Du må velge bunn</li>"}
+            if (!selectedFyll){infoTxt += delTxt = "<li>Du må velge fyll</li>"}
+            if (!selectedStr){infoTxt += delTxt = "<li>Du må velge størrelse</li><br/>"}
         }
     updateView();
     }
 
     function selectBunn(selectedOption){
-        selectedBunn = selectedOption;
+        selectedBunn = selectedOption; 
         orderInfo();
     }
     
